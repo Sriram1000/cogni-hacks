@@ -42,13 +42,13 @@ Pathway Map
 
 Alongside the diary, a roadmap shows:
 
-# 📚 Courses to take
+- 📚 Courses to take
 
-# 🎓 Possible majors
+- 🎓 Possible majors
 
-# 💼 Career pathways
+- 💼 Career pathways
 
-# 🌍 Skills & habits needed
+- 🌍 Skills & habits needed
 
 AI links each suggestion to why it matters for their goal.
 
