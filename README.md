@@ -2,7 +2,7 @@
 # LifeLens
 Prompt: Create novel applications that make human-computer interaction more natural, accessible, and impactful
 
-# 🌟 LifeLens – AI Future Planner for Students & Youth
+## 🌟 LifeLens – AI Future Planner for Students & Youth
 # 🧩 The Problem
 
 Students have dreams (college, career, lifestyle), but they can’t visualize how their current habits/choices map to those futures.
