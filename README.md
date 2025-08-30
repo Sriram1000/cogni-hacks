@@ -2,8 +2,8 @@
 # LifeLens
 Prompt: Create novel applications that make human-computer interaction more natural, accessible, and impactful
 
-🌟 LifeLens – AI Future Planner for Students & Youth
-🧩 The Problem
+# 🌟 LifeLens – AI Future Planner for Students & Youth
+# 🧩 The Problem
 
 Students have dreams (college, career, lifestyle), but they can’t visualize how their current habits/choices map to those futures.
 
@@ -11,7 +11,7 @@ Guidance counselors are overworked, and tools like Naviance or Khan are too gene
 
 Teens want something more interactive and inspiring, not just static charts.
 
-💡 The Solution
+# 💡 The Solution
 
 LifeLens is an AI-powered future simulator that creates a “day-in-the-life” story of your future self (5, 10, or 20 years from now) — based on your classes, interests, habits, and goals.
 
@@ -23,7 +23,7 @@ Actionable steps: Concrete course, extracurricular, or habit suggestions now.
 
 It’s part coach, part mirror, part imagination machine.
 
-🎭 Core Features
+# 🎭 Core Features
 
 Future Diary Generator
 
@@ -42,13 +42,13 @@ Pathway Map
 
 Alongside the diary, a roadmap shows:
 
-📚 Courses to take
+# 📚 Courses to take
 
-🎓 Possible majors
+# 🎓 Possible majors
 
-💼 Career pathways
+# 💼 Career pathways
 
-🌍 Skills & habits needed
+# 🌍 Skills & habits needed
 
 AI links each suggestion to why it matters for their goal.
 
@@ -66,19 +66,19 @@ AI generates images of your “future setting”: college campus, workplace, cit
 
 Adds emotional connection and demo appeal.
 
-🏗️ Technical Architecture
+# 🏗️ Technical Architecture
 
 Frontend: React/Next.js (web) or Expo/React Native (mobile).
 
 Backend: FastAPI/Node.js with OpenAI API.
 
-Data Layer:
+# Data Layer:
 
 Embedding DB (Pinecone/Qdrant/pgvector) with career data, college majors, salary ranges, etc.
 
 Prompt templates that pull from these to ground predictions.
 
-AI Integration:
+# AI Integration:
 
 GPT for narrative generation (“future diary,” roadmap text).
 
