@@ -1,0 +1,75 @@
+// NOTE: adjust BACKEND_URL if you deploy the backend elsewhere.
+chatInput.value = '';
+try {
+const res = await fetch(BACKEND_URL + '/api/chat', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.jwt}` },
+body: JSON.stringify({ message: msg })
+});
+const data = await res.json();
+this.addChatMessage(data.reply || '...', 'bot');
+} catch (e) {
+console.error(e);
+this.addChatMessage('Sorry, I had trouble responding.', 'bot');
+}
+}
+
+
+addChatMessage(text, type) {
+const chatMessages = document.getElementById('chatMessages');
+const div = document.createElement('div');
+div.className = `message ${type}-message`;
+div.innerHTML = `<div class="message-avatar"><i class="fas fa-${type === 'bot' ? 'robot' : 'user'}"></i></div><div class="message-content"><p>${text}</p></div>`;
+chatMessages?.appendChild(div);
+if (chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+saveFuture() {
+if (!this.currentFuture) return this.toast('Generate a future first', 'warning');
+const data = { future: this.currentFuture, savedAt: new Date().toISOString() };
+const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url; a.download = `lifelens_${new Date().toISOString().slice(0,10)}.json`; a.click();
+URL.revokeObjectURL(url);
+this.toast('Saved!', 'success');
+}
+
+
+setupTimeSlider() {
+const timeSlider = document.getElementById('timeSlider');
+if (timeSlider) timeSlider.value = this.currentTimeframe;
+}
+
+
+loadSession() {
+const token = localStorage.getItem('lifelens_jwt');
+const user = localStorage.getItem('lifelens_user');
+if (token && user) {
+this.jwt = token;
+this.currentUser = JSON.parse(user);
+this.isAuthenticated = true;
+this.updateAuthUI();
+}
+}
+
+
+loading(on) {
+const overlay = document.getElementById('loadingOverlay');
+overlay && overlay.classList[on ? 'remove' : 'add']('hidden');
+}
+
+
+toast(msg, type='info') {
+const el = document.createElement('div');
+el.className = `notification notification-${type}`;
+el.innerHTML = `<div class="notification-content"><span>${msg}</span></div>`;
+document.body.appendChild(el);
+setTimeout(()=> el.classList.add('show'), 50);
+setTimeout(()=> { el.classList.remove('show'); setTimeout(()=> el.remove(), 250); }, 2500);
+}
+}
+
+
+document.addEventListener('DOMContentLoaded', () => { window.app = new LifeLensApp(); });
