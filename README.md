@@ -1,5 +1,5 @@
 # Cogni-Hacks 2025
-# LifeLens
+
 Prompt: Create novel applications that make human-computer interaction more natural, accessible, and impactful
 
 #  LifeLens – AI Future Planner for Students & Youth
